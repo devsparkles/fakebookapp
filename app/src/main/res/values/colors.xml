@@ -3,4 +3,13 @@
   <color name="colorPrimary">#3F51B5</color>
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
+
+
+  <!-- Login activity -->
+  <color name="colorUsernameAndPasswordPlaceholder">#BBC5C6</color>
+  <color name="colorBorderUsernamePassword">#D0D0D0</color>
+  <color name="colorBackgroundLoginButton">#454E4F</color>
+  <color name="colorTextLoginButton">#E9ECEC</color>
+
+
 </resources>

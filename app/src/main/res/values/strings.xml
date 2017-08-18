@@ -1,3 +1,11 @@
 <resources>
   <string name="app_name">FakebookApp</string>
+
+
+  <!-- Login Activity -->
+  <string name="button_login">LOGIN</string>
+  <string name="button_username">Username</string>
+  <string name="button_password">Password</string>
+
+
 </resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login_screen"
+    tools:context="com.devsparkle.fakebookapp.controllers.LoginActivity"
+    >
+
+
+
+  <LinearLayout
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_marginTop="100dp"
+      android:layout_gravity="center_horizontal"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:weightSum="1">
+
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/fakebookapp_logo"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_shape"
+        android:textColorHint="@color/colorUsernameAndPasswordPlaceholder"
+        android:padding="15dp"
+        android:textSize="20sp"
+        android:hint="@string/button_username"
+        android:layout_marginBottom="22dp"
+        android:id="@+id/editText_username"
+        android:inputType="text|textFilter|textNoSuggestions"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/login_shape"
+        android:textColorHint="@color/colorUsernameAndPasswordPlaceholder"
+        android:padding="15dp"
+        android:textSize="20sp"
+        android:inputType="textPassword"
+        android:hint="@string/button_password"
+        android:id="@+id/editText_password"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundLoginButton"
+        android:textColor="@color/colorTextLoginButton"
+        android:height="60dp"
+        android:textSize="20sp"
+        android:text="@string/button_login"
+        android:id="@+id/button_login"
+        android:layout_gravity="center_horizontal" />
+
+    <ProgressBar
+        android:layout_marginTop="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:indeterminateDrawable="@drawable/loader" />
+
+
+
+
+  </LinearLayout>
+
+
+
+</RelativeLayout>
