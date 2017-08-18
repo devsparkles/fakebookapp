@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import com.devsparkle.fakebookapp.R;
 import com.devsparkle.fakebookapp.api.AuthService;
 import com.devsparkle.fakebookapp.config.ApiConfig;
@@ -29,11 +30,12 @@ public class LoginActivity extends AppCompatActivity {
   public static final String PREFS_NAME = "FakebookAppPrefsFile";
 
   // Current resources
-  EditText editTestUsername;
-  EditText editTextPassword;
-  Button btnLogin;
+  EditText mEditTestUsername;
+  EditText mEditTextPassword;
+  Button mBtnLogin;
+  ProgressBar mProgressBarLogin;
+  ImageView mImageViewLogo;
 
-  ImageView imageViewLogo;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -53,18 +55,20 @@ public class LoginActivity extends AppCompatActivity {
     // if you tap on the fakebook logo your field get prefilled with the
     // Username: <xavierm>
     // API Key: <EF3B477DAE97B123>
-    imageViewLogo.setOnClickListener(new View.OnClickListener() {
+    mImageViewLogo.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        editTestUsername.setText("xavierm");
-        editTextPassword.setText("EF3B477DAE97B123");
+        mEditTestUsername.setText("xavierm");
+        mEditTextPassword.setText("EF3B477DAE97B123");
       }
     });
 
-    btnLogin.setOnClickListener(new View.OnClickListener() {
+    mBtnLogin.setOnClickListener(new View.OnClickListener() {
       public void onClick(View v) {
+        mProgressBarLogin.setVisibility(View.VISIBLE);
+
         // retrieve login access info
-        String username = editTestUsername.getText().toString();
-        String apikey = editTextPassword.getText().toString();
+        String username = mEditTestUsername.getText().toString();
+        String apikey = mEditTextPassword.getText().toString();
 
         Retrofit retrofit = new Retrofit.Builder().baseUrl(ApiConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -83,13 +87,14 @@ public class LoginActivity extends AppCompatActivity {
               // store token in android preference
               SharedPreferences settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
               SharedPreferences.Editor editor = settings.edit();
-              editor.putString(User.USERNAME, editTestUsername.getText().toString());
-              editor.putString(User.PASSWORD, editTextPassword.getText().toString());
+              editor.putString(User.USERNAME, mEditTestUsername.getText().toString());
+              editor.putString(User.PASSWORD, mEditTextPassword.getText().toString());
               editor.putString(User.TOKEN, user.getToken());
               editor.putBoolean(User.IS_ALREADY_LOGGED, true);
               editor.commit();
 
               // then go to RequestsActivity
+              mProgressBarLogin.setVisibility(View.INVISIBLE);
               goToRecipientsActivityAndFinish();
             } else {
               int statusCode = response.code();
@@ -111,10 +116,11 @@ public class LoginActivity extends AppCompatActivity {
 
   // private methods
   private void setResources() {
-    editTestUsername = (EditText) findViewById(R.id.editText_username);
-    editTextPassword = (EditText) findViewById(R.id.editText_password);
-    imageViewLogo = (ImageView) findViewById(R.id.imageViewLogo);
-    btnLogin = (Button) findViewById(R.id.button_login);
+    mEditTestUsername = (EditText) findViewById(R.id.editText_username);
+    mEditTextPassword = (EditText) findViewById(R.id.editText_password);
+    mImageViewLogo = (ImageView) findViewById(R.id.imageViewLogo);
+    mBtnLogin = (Button) findViewById(R.id.button_login);
+    mProgressBarLogin = (ProgressBar) findViewById(R.id.progressBarLogin);
   }
 
   private Typeface getTypeFaceFont(String fontFile) {

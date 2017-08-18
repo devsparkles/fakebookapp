@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.devsparkle.fakebookapp.controllers.RecipientsActivity"
     >
 
-</android.support.constraint.ConstraintLayout>
+
+  <RelativeLayout
+      android:id="@+id/linearLayoutBar"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:background="@color/colorPrimary"
+      android:layout_alignParentTop="true"
+      android:layout_alignParentStart="true"
+      >
+
+    <TextView
+
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/recipients_list"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        />
+
+
+    <android.support.v7.widget.ButtonBarLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        >
+      <Button
+          android:id="@+id/button_logout"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/log_out"
+          android:textColor="@android:color/white"
+          android:textSize="24sp"
+          android:textStyle="bold"
+          android:backgroundTint="@android:color/transparent"
+          android:="true"
+          />
+    </android.support.v7.widget.ButtonBarLayout>
+
+  </RelativeLayout>
+
+
+  <android.support.v7.widget.ListViewCompat
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+
+      android:background="#aaaaaa"
+      android:layout_below="@+id/linearLayoutBar"
+
+      >
+
+
+  </android.support.v7.widget.ListViewCompat>
+
+
+</RelativeLayout>

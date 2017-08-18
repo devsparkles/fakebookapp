@@ -6,6 +6,9 @@
   <string name="button_login">LOGIN</string>
   <string name="button_username">Username</string>
   <string name="button_password">Password</string>
+  <string name="recipients_list">Recipients list</string>
+  <string name="logo_of_the_app">Logo of the app</string>
+  <string name="log_out">Log out</string>
 
 
 </resources>
