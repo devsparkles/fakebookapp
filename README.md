@@ -15,5 +15,3 @@ You will write a small app that uses Coolplay API in a language of your choice. 
 - Send them money
 - Check whether a payment was successful
 
-Username: xavierm
-API Key: EF3B477DAE97B123
