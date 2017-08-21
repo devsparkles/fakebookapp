@@ -15,3 +15,4 @@ You will write a small app that uses Coolplay API in a language of your choice. 
 - Send them money
 - Check whether a payment was successful
 
+You can see a demo video here https://drive.google.com/open?id=0BwGiQ2rkXYPta3NmX3VIRlMtdW8
