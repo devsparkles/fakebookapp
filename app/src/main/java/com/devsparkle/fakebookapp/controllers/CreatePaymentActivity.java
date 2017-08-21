@@ -61,7 +61,7 @@ public class CreatePaymentActivity extends AppCompatActivity {
     final String recipientId = intent.getStringExtra(Recipient.ID);
     final String recipientName = intent.getStringExtra(Recipient.NAME);
     // just display the recipient name on the screen
-    mTextViewRecipientNameCreatePayment.setText(recipientName);
+    mTextViewRecipientNameCreatePayment.setText("to:"+recipientName);
 
     // create payment
     mButtonCreatePayment.setOnClickListener(new View.OnClickListener() {
