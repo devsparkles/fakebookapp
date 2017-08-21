@@ -1,6 +1,7 @@
 package com.devsparkle.fakebookapp.api.dto;
 
 import com.devsparkle.fakebookapp.models.Payment;
+import java.util.List;
 
 /**
  * Created by xmaximin on 8/21/17.
@@ -9,6 +10,10 @@ import com.devsparkle.fakebookapp.models.Payment;
 public class PaymentDTO {
 
   Payment payment;
+
+  List<Payment> payments;
+
+
 
   public PaymentDTO() {
   }
@@ -23,5 +28,13 @@ public class PaymentDTO {
 
   public void setPayment(Payment payment) {
     this.payment = payment;
+  }
+
+  public List<Payment> getPayments() {
+    return payments;
+  }
+
+  public void setPayments(List<Payment> payments) {
+    this.payments = payments;
   }
 }

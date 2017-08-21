@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.devsparkle.fakebookapp.R;
 import com.devsparkle.fakebookapp.models.Recipient;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,10 +46,8 @@ public class RecipientAdapter extends BaseAdapter {
     // Get view for row item
     View rowView = mInflater.inflate(R.layout.list_item_recipient, parent, false);
 
-
     TextView titleTextView =
-        (TextView) rowView.findViewById(com.devsparkle.fakebookapp.R.id.textViewRecipientName);
-
+        (TextView) rowView.findViewById(R.id.textViewRecipientName);
 
     Recipient recipient = (Recipient) getItem(position);
 

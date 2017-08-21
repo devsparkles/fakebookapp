@@ -112,8 +112,7 @@ public class RecipientsActivity extends AppCompatActivity {
     mListViewRecipients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Recipient r = (Recipient) mListViewRecipients.getItemAtPosition(position);
-
-        Intent myIntent = new Intent(view.getContext(), CreatePaymentActivity.class);
+        Intent myIntent = new Intent(view.getContext(), PaymentActivity.class);
         myIntent.putExtra(Recipient.ID, r.getId());
         myIntent.putExtra(Recipient.NAME, r.getName());
         startActivity(myIntent);

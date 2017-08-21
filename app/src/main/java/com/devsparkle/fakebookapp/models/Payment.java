@@ -8,6 +8,9 @@ public class Payment {
 
   String id;
   String recipient_id;
+  String recipient_name;
+
+
   String currency;
   String amount;
   String status;
@@ -61,4 +64,13 @@ public class Payment {
   public void setStatus(String status) {
     this.status = status;
   }
+
+  public String getRecipient_name() {
+    return recipient_name;
+  }
+
+  public void setRecipient_name(String recipient_name) {
+    this.recipient_name = recipient_name;
+  }
+
 }
