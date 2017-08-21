@@ -13,6 +13,7 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
     <activity
+        android:windowSoftInputMode="stateHidden|adjustResize"
         android:name=".controllers.LoginActivity"
         android:screenOrientation="portrait">
       <intent-filter>
@@ -21,7 +22,12 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <activity android:name=".controllers.RecipientsActivity">
+    <activity
+        android:name=".controllers.RecipientsActivity"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="stateHidden|adjustResize">
+    </activity>
+    <activity android:name=".controllers.CreatePaymentActivity">
     </activity>
   </application>
 

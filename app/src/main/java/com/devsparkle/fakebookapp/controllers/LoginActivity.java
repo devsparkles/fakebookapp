@@ -13,7 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import com.devsparkle.fakebookapp.R;
-import com.devsparkle.fakebookapp.api.AuthService;
+import com.devsparkle.fakebookapp.api.LoginService;
+import com.devsparkle.fakebookapp.api.dto.UserDTO;
 import com.devsparkle.fakebookapp.config.ApiConfig;
 import com.devsparkle.fakebookapp.models.User;
 import com.squareup.okhttp.ResponseBody;
@@ -74,15 +75,15 @@ public class LoginActivity extends AppCompatActivity {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-        AuthService service = retrofit.create(AuthService.class);
+        LoginService service = retrofit.create(LoginService.class);
 
-        Call<User> user = service.getToken("application/json", new User(username, apikey));
+        Call<UserDTO> user = service.getToken("application/json", new UserDTO(username, apikey));
 
-        user.enqueue(new Callback<User>() {
-          @Override public void onResponse(Response<User> response, Retrofit retrofit) {
+        user.enqueue(new Callback<UserDTO>() {
+          @Override public void onResponse(Response<UserDTO> response, Retrofit retrofit) {
             // response.isSuccess() is true if the response code is 2xx
             if (response.isSuccess()) {
-              User user = response.body();
+              UserDTO user = response.body();
 
               // store token in android preference
               SharedPreferences settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);

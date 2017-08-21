@@ -9,6 +9,8 @@
   <string name="recipients_list">Recipients list</string>
   <string name="logo_of_the_app">Logo of the app</string>
   <string name="log_out">Log out</string>
+  <string name="create_payment">Create Payment</string>
+  <string name="back">Back</string>
 
 
 </resources>

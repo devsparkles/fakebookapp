@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,8 +14,6 @@
       android:layout_width="match_parent"
       android:layout_height="50dp"
       android:background="@color/colorPrimary"
-      android:layout_alignParentTop="true"
-      android:layout_alignParentStart="true"
       >
 
     <TextView
@@ -22,21 +21,20 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="@string/recipients_list"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         />
 
 
-    <android.support.v7.widget.ButtonBarLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        >
       <Button
+          android:layout_alignParentEnd="true"
+          android:layout_alignParentTop="true"
           android:id="@+id/button_logout"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -45,24 +43,48 @@
           android:textSize="24sp"
           android:textStyle="bold"
           android:backgroundTint="@android:color/transparent"
-          android:="true"
+
+          tools:ignore="RelativeOverlap"
           />
-    </android.support.v7.widget.ButtonBarLayout>
 
   </RelativeLayout>
 
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      >
+
+    <EditText
+        android:id="@+id/editText_recipient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:width="200dp"
+
+        />
+    <Button
+        android:id="@+id/button_add_recipient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Add"
+        />
+
+
+  </LinearLayout>
 
   <android.support.v7.widget.ListViewCompat
+      android:id="@+id/listviewRecipients"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-
+      android:stackFromBottom="true"
+      android:transcriptMode="normal"
       android:background="#aaaaaa"
-      android:layout_below="@+id/linearLayoutBar"
 
       >
 
 
   </android.support.v7.widget.ListViewCompat>
 
-
-</RelativeLayout>
+</LinearLayout>

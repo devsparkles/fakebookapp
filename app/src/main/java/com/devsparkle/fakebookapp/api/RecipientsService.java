@@ -1,7 +1,9 @@
 package com.devsparkle.fakebookapp.api;
 
-import com.devsparkle.fakebookapp.models.User;
+import com.devsparkle.fakebookapp.api.dto.RecipientDTO;
 import retrofit.Call;
+import retrofit.http.Body;
+import retrofit.http.GET;
 import retrofit.http.Header;
 import retrofit.http.POST;
 
@@ -11,7 +13,12 @@ import retrofit.http.POST;
 
 public interface RecipientsService {
 
-  @POST("login") Call<User> listRecipients(@Header("Content-Type") String content_type,  @Header("Authorization:Bearer") User user);
+  @GET("recipients") Call<RecipientDTO> listRecipients(@Header("Content-Type") String contentType,
+      @Header("Authorization") String token);
+
+  @POST("recipients") Call<RecipientDTO> addRecipient(@Header("Content-Type") String contentType,
+      @Header("Authorization") String token, @Body RecipientDTO recipient);
+
 
 
 }
