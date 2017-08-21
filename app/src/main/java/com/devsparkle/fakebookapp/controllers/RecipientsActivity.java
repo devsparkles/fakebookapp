@@ -9,11 +9,11 @@ import android.support.v7.widget.ListViewCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import com.devsparkle.fakebookapp.R;
+import com.devsparkle.fakebookapp.adapter.RecipientAdapter;
 import com.devsparkle.fakebookapp.api.RecipientsService;
 import com.devsparkle.fakebookapp.api.dto.RecipientDTO;
 import com.devsparkle.fakebookapp.config.ApiConfig;
@@ -140,17 +140,18 @@ public class RecipientsActivity extends AppCompatActivity {
 
           List<Recipient> recipientList = recipient.getRecipients();
           // 2
-          String[] listItems = new String[recipientList.size()];
+          //String[] listItems = new String[recipientList.size()];
           // 3
-          for (int i = 0; i < recipientList.size(); i++) {
-            Recipient recipe = recipientList.get(i);
-            listItems[i] = recipe.getName();
-          }
+         // for (int i = 0; i < recipientList.size(); i++) {
+         //   Recipient recipe = recipientList.get(i);
+         //   listItems[i] = recipe.getName();
+          //}
           // 4
-          ArrayAdapter adapter =
-              new ArrayAdapter(RecipientsActivity.this, android.R.layout.simple_list_item_1,
-                  listItems);
-          mListViewRecipients.setAdapter(adapter);
+          RecipientAdapter recipientAdapter = new RecipientAdapter(RecipientsActivity.this, recipientList);
+          //ArrayAdapter adapter =
+          //    new ArrayAdapter(RecipientsActivity.this, android.R.layout.simple_list_item_1,
+           //       listItems);
+          mListViewRecipients.setAdapter(recipientAdapter);
           // mListViewRecipients.setAdapter();
         } else {
           int statusCode = response.code();

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.devsparkle.fakebookapp.R;
 import com.devsparkle.fakebookapp.models.Recipient;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by xmaximin on 8/20/17.
@@ -18,9 +19,9 @@ public class RecipientAdapter extends BaseAdapter {
 
   private Context mContext;
   private LayoutInflater mInflater;
-  private ArrayList<Recipient> mDataSource;
+  private List<Recipient> mDataSource;
 
-  public RecipientAdapter(Context context, ArrayList<Recipient> items) {
+  public RecipientAdapter(Context context, List<Recipient> items) {
     mContext = context;
     mDataSource = items;
     mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
